@@ -11,9 +11,6 @@ const infoSlice = createSlice(
             }
         }
     },
-    
 )
-
-
 export const { uploadInfo } = infoSlice.actions
 export const infoReducer = infoSlice.reducer

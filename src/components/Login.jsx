@@ -5,9 +5,15 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { uploadInfo } from '../redux-toolkit/infoSlice';
+import { useEffect } from 'react';
 
 
 function Login() {
+    useEffect(()=>{
+        window.localStorage.setItem('token', '0')
+        window.localStorage.setItem('name', '0')
+        window.localStorage.setItem('page', '0')
+    },[])
     const dispatch  = useDispatch()
     const nav = useNavigate()
     const onFinish = (values) => {
@@ -16,7 +22,7 @@ function Login() {
         })
         .then(function(value){
             console.log(value.data.data.user);
-            window.localStorage.setItem('token', value.data.data.token)
+            window.localStorage.setItem('token', value.data.data.token)  
             window.localStorage.setItem('name',value.data.data.user.name )
             message.success('dang nhap thanh cong')
             dispatch(uploadInfo(value.data.data.user))

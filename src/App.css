@@ -51,8 +51,8 @@
   color: aliceblue;
 }
 img{
-  height: 100px;
-  width: 100px;
+  height: auto;
+  width: 200px;
 }
 .span{
   width: 20px;

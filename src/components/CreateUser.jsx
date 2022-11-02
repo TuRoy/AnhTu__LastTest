@@ -21,6 +21,7 @@ function CreateUser() {
         Formdatas.append('myFile', myfile.current.files[0] )
         Formdatas.append('phone', values.phone.toString())
         Formdatas.append('dateOfBirth', date.current.value.toLocaleString())
+        console.log(Formdatas);
         axios.post('https://class.nodemy.vn/api/mock/users',Formdatas, {
             'Content-Type':'multipart/form-data',
             headers: { Authorization: `bearer ${token} ` }
